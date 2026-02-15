@@ -2,6 +2,25 @@
 
 <PageTitle>Home</PageTitle>
 
-<h1>Hello, world!</h1>
 
-Welcome to your new app.
+<p>Welcome to my website!</p>
+<p>I'm a @age year old software developer living in Melbourne, Australia</p>
+<p>Check out some of my personal projects in my online portfolio.</p>
+
+@code {
+    private int age = CalculateYearsSince(new DateTime(1992,12,14));
+
+    private static int CalculateYearsSince(DateTime inputDate)
+    {
+        DateTime today = DateTime.Today;
+
+        int years = today.Year - inputDate.Year;
+
+        if (today.Month < inputDate.Month || today.Month == inputDate.Month && today.Day < inputDate.Day)
+        {
+            years--;
+        }
+        return years;
+    }
+
+}
